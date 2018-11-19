@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 // element
-import './plugins/element.js'
+// import './plugins/element.js'
 
 // router
 import Router from './router'

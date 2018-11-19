@@ -4,10 +4,10 @@
     <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-            Anything you want
+            Tel: 13951636922
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2016 <a href="https://github.com/cxc6922">cxc6922</a>.</strong> All rights reserved.
     </footer>
 </template>
 
