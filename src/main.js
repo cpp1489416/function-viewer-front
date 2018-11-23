@@ -9,6 +9,7 @@ import Router from './router'
 
 // jquery
 import '@/assets/jquery-vendor'
+import 'jquery-slimscroll'
 
 // iconfont
 import '@/assets/iconfont/iconfont.css'
@@ -30,11 +31,24 @@ import 'admin-lte/dist/js/adminlte.min.js'
 // reset.css
 import '@/assets/css/reset.css'
 
-Vue.config.productionTip = false
+// axios
+import Axios from 'axios'
 
+// store
+import Store from '@/store'
+
+// tools
+import Tools from '@/assets/tools'
+
+Vue.config.productionTip = false;
+
+Vue.prototype.axios = Axios;
+
+Vue.prototype.tools = Tools;
 
 new Vue({
     router: Router,
+    store: Store,
     render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
 

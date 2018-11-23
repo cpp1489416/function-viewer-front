@@ -19,7 +19,12 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="https://github.com/cxc6922"><i class="fa fa-github"></i></a>
+                        <a href="https://github.com/cxc6922" v-show="user != null">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <a href="#" v-show="user == null">
+                            <i class="fa fa-refresh fa-spin"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -29,7 +34,32 @@
 
 <script>
     export default {
-        name: "Header"
+        name: "Header",
+        methods: {},
+        computed: {
+            user() {
+                return this.$store.state.user;
+            }
+        },
+        mounted() {
+        },
+        async created() {
+            console.log('start ajax');
+            let res = await this.axios.post(
+                '/bdapi/common/getCurrentUserInfo',
+                {}
+            );
+            const resinf = res.data.info;
+            //  await this.tools.sleep(1000);
+            console.log(resinf);
+            this.$store.commit(
+                'setUser', {
+                    name: resinf.userName,
+                    id: resinf.userCode
+                }
+            );
+            console.log('end');
+        }
     }
 </script>
 

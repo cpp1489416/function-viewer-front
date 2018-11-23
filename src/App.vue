@@ -1,33 +1,22 @@
 <template>
     <div id="app">
-        <div class="wrapper">
-
-            <!-- Main Header -->
-            <v-header/>
-            <!-- Left side column. contains the logo and sidebar -->
-            <v-left-side-bar/>
-
-            <router-view/>
-
-            <!-- /.content-wrapper -->
-            <v-footer/>
-        </div>
+        <router-view style="min-height:100%;"/>
     </div>
 </template>
 
 <script>
-    import LeftSideBar from '@/components/LeftSideBar'
-    import Header from '@/components/Header'
-    import Footer from '@/components/Footer'
 
     export default {
         name: 'app',
         components: {
-            'v-left-side-bar': LeftSideBar,
-            'v-header': Header,
-            'v-footer': Footer
         },
         mounted() {
+            $('body').layout('fix')
+        },
+        watch: {
+            '$route'(to, from) {
+                $('body').layout('fix')
+            }
         }
     }
 </script>

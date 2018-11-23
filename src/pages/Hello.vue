@@ -1,7 +1,5 @@
 <template>
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 100%;">
-        <!-- Content Header (Page header) -->
+    <div>
         <section class="content-header">
             <h1>
                 this is hello page
@@ -9,38 +7,35 @@
             </h1>
         </section>
 
-        <!-- Main content -->
         <section class="content">
-
-            <!--------------------------
-              | Your Page Content Here |
-              -------------------------->
-
+            <input type="text" placeholder="please input username" v-model="userName"/>
+            <button @click="click">点我</button>
         </section>
-        <!-- /.content -->
     </div>
 </template>
 
 <script>
-    import LeftSideBar from '@/components/LeftSideBar'
-    import Header from '@/components/Header'
-    import Footer from '@/components/Footer'
-
     export default {
         name: 'HelloWorld',
         data() {
             return {
-                msg: 'Welcome to Your Vue.js App'
+                msg: 'Welcome to Your Vue.js App',
+                isa: true,
+                userName: ''
             }
         },
-        components: {
-            'v-left-side-bar': LeftSideBar,
-            'v-header': Header,
-            'v-footer': Footer
+        components: {},
+        methods: {
+            click: function () {
+                alert('clicked');
+                alert(this.$store.state.userName);
+            }
         }
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    div {
+        min-height: 100%;
+    }
 </style>
