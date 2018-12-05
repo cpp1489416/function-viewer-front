@@ -1,0 +1,10 @@
+{
+  "code": 20000,
+  "data": {
+    "roles": [
+      "admin"
+    ],
+    "name": "admin",
+    "avatar": "http://localhost:9999/favicon.ico"
+  }
+}
